@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elsewhere</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+  <div class="cosmic-moon"></div>
+  <div class="cosmic-moon-2"></div>
+  <nav class="top-nav">
+    <div class="logo-container">
+      <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px; cursor: pointer;">
+      <svg class="logo-icon" viewBox="0 0 24 24" width="24" height="24">
+        <defs>
+          <radialGradient id="moonGrad" cx="0.78" cy="0.45" r="0.7">
+            <stop offset="0%" stop-color="#c4b8ff"/>
+            <stop offset="45%" stop-color="#8a78ff"/>
+            <stop offset="100%" stop-color="#4a3a9c"/>
+          </radialGradient>
+          <filter id="moonGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.35" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <mask id="crescentMask">
+            <rect width="24" height="24" fill="white"/>
+            <circle cx="9.4" cy="10.8" r="8.5" fill="black"/>
+          </mask>
+        </defs>
+        <circle cx="12.5" cy="12" r="8.5" fill="url(#moonGrad)" mask="url(#crescentMask)" filter="url(#moonGlow)"/>
+      </svg>
+      <span class="wordmark">ELSEWHERE</span>
+      </a>
+    </div>
+    <div class="ambient-label">Experimental Narrative AI</div>
+  </nav>
+
+  <!-- Tiny slow-moving white dots floating in background -->
+  <canvas id="stars"></canvas>
+
+  <main>
+    <!-- SECTION 1 -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="cinematic-glow"></div>
+        <div class="cinematic-glow-inner"></div>
+        <p class="intro-line">Somewhere, another version of you made a different choice.</p>
+        <h1>Every decision creates another version of you.</h1>
+        <p class="subheadline">Elsewhere lets you meet them.</p>
+        <a href="intake.html" class="cta-button">Explore Your Futures</a>
+        <div class="horizon-line"></div>
+        <p class="closing-micro">No two futures feel the same.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="concept">
+      <p>
+        What if you took that job? What if you never moved away? <br><br>
+        Somewhere out there, in a sprawling multiverse of choices, another you is living that life.
+        It's time to find out what they know.
+      </p>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section class="cards-section">
+      <div class="mid-orb"></div>
+      <div class="fragments-container">
+        <div class="fragment frag-1">"The version of you who stayed."</div>
+        <div class="fragment frag-2">"The version of you who left."</div>
+        <div class="fragment frag-3">"The version of you who chose ambition."</div>
+        <div class="fragment frag-4">"The version of you who chose peace."</div>
+      </div>
+    </section>
+
+    <div class="horizon"></div>
+
+    <!-- SECTION 4 -->
+    <section class="cta-section">
+      <div class="cta-halo cta-halo-outer" aria-hidden="true"></div>
+      <div class="cta-halo cta-halo-inner" aria-hidden="true"></div>
+
+      <div class="cta-fragments" aria-hidden="true">
+        <span class="cta-frag cta-frag-1">You stayed.</span>
+        <span class="cta-frag cta-frag-2">You never called.</span>
+        <span class="cta-frag cta-frag-3">The city changed you.</span>
+        <span class="cta-frag cta-frag-4">You almost left.</span>
+      </div>
+
+      <div class="cta-content">
+        <p class="cta-intro">Somewhere, another version of you already made the choice.</p>
+        <div class="cta-horizon-line" aria-hidden="true"></div>
+        <h2 class="cta-headline">Ready to see<br>what could have been?</h2>
+        <div class="cta-button-wrap">
+          <a href="intake.html" class="cta-button">Explore Your Futures</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Canvas animation for floating dots
+    const canvas = document.getElementById('stars');
+    const ctx = canvas.getContext('2d');
+
+    let dots = [];
+
+    function initCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      dots = [];
+      const numDots = Math.floor((canvas.width * canvas.height) / 15000);
+      for (let i = 0; i < numDots; i++) {
+        dots.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 1.2 + 0.3,
+          dx: (Math.random() - 0.5) * 0.15,
+          dy: (Math.random() - 0.5) * 0.15,
+          opacity: Math.random() * 0.6 + 0.2
+        });
+      }
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (const dot of dots) {
+        ctx.beginPath();
+        ctx.arc(dot.x, dot.y, dot.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${dot.opacity})`;
+        ctx.fill();
+
+        dot.x += dot.dx;
+        dot.y += dot.dy;
+
+        // Wrap around
+        if (dot.x < 0) dot.x = canvas.width;
+        if (dot.x > canvas.width) dot.x = 0;
+        if (dot.y < 0) dot.y = canvas.height;
+        if (dot.y > canvas.height) dot.y = 0;
+      }
+    }
+
+    initCanvas();
+    animate();
+
+    window.addEventListener('resize', initCanvas);
+
+    // Floating background quotes
+    const quotes = [
+      "You stayed.",
+      "You never called her back.",
+      "The city changed you.",
+      "You finally left.",
+      "You became who you feared.",
+      "You chose the other door.",
+      "You never sent that email.",
+      "You stayed too long.",
+      "You were happy, mostly.",
+      "You forgot what you wanted."
+    ];
+
+    const hero = document.querySelector('.hero');
+
+    quotes.forEach((quote, i) => {
+      const el = document.createElement('div');
+      el.classList.add('bg-quote');
+      const rot = (Math.random() - 0.5) * 8;
+      el.dataset.rot = rot;
+      el.textContent = quote;
+      el.style.cssText = `
+        position: absolute;
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        color: rgba(180,170,255,0.07);
+        pointer-events: none;
+        z-index: 0;
+        top: ${15 + Math.random() * 70}%;
+        left: ${5 + Math.random() * 85}%;
+        transform: rotate(${rot}deg);
+        white-space: nowrap;
+        animation: quoteDrift ${12 + i * 2}s ease-in-out infinite;
+        animation-delay: ${i * 1.5}s;
+      `;
+      hero.appendChild(el);
+    });
+
+    // Scroll-based parallax effects
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+
+      // Moon shifts slowly as you scroll
+      const moon = document.querySelector('.cosmic-moon');
+      if (moon) moon.style.transform = `translate(-50%, calc(-50% + ${scrollY * 0.15}px)) scale(1)`;
+
+      // Particles canvas shifts slightly
+      const canvasEl = document.querySelector('#stars');
+      if (canvasEl) canvasEl.style.transform = `translateY(${scrollY * 0.3}px)`;
+
+      // Background quotes drift at different rates
+      document.querySelectorAll('.bg-quote').forEach((el, i) => {
+        const rate = 0.05 + (i % 3) * 0.04;
+        el.style.transform = `translateY(${scrollY * rate}px) rotate(${el.dataset.rot}deg)`;
+      });
+
+      // Section headings fade in as they enter viewport
+      document.querySelectorAll('section').forEach(section => {
+        const rect = section.getBoundingClientRect();
+        const visible = rect.top < window.innerHeight * 0.85;
+        section.style.opacity = visible ? '1' : '0';
+        section.style.transform = visible ? 'translateY(0)' : 'translateY(30px)';
+        section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+      });
+    });
+
+    // Trigger scroll logic on load
+    window.dispatchEvent(new Event('scroll'));
+  </script>
+</body>
+
+</html>

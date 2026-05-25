@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reflection Intake - Elsewhere</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body style="margin: 0; padding: 0; min-height: 100vh; background: var(--bg); position: relative;">
+  <nav class="top-nav">
+    <div class="logo-container">
+      <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px; cursor: pointer;">
+      <svg class="logo-icon" viewBox="0 0 24 24" width="24" height="24">
+        <defs>
+          <radialGradient id="moonGrad" cx="0.78" cy="0.45" r="0.7">
+            <stop offset="0%" stop-color="#c4b8ff"/>
+            <stop offset="45%" stop-color="#8a78ff"/>
+            <stop offset="100%" stop-color="#4a3a9c"/>
+          </radialGradient>
+          <filter id="moonGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.35" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <mask id="crescentMask">
+            <rect width="24" height="24" fill="white"/>
+            <circle cx="9.4" cy="10.8" r="8.5" fill="black"/>
+          </mask>
+        </defs>
+        <circle cx="12.5" cy="12" r="8.5" fill="url(#moonGrad)" mask="url(#crescentMask)" filter="url(#moonGlow)"/>
+      </svg>
+      <span class="wordmark">ELSEWHERE</span>
+      </a>
+    </div>
+    <div class="ambient-label">Experimental Narrative AI</div>
+  </nav>
+  <div class="ambient-gradient"></div>
+  <div class="progress-indicator" id="progress">1 of 5</div>
+  
+  <main class="intake-container" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; max-width: 560px; padding: 24px; min-height: auto; margin: 0;">
+    <div class="question-block" id="questionBlock">
+      <h2 class="question-text" id="questionText">How old are you?</h2>
+      <div class="input-wrapper">
+        <input class="intake-input" id="questionInput" type="number" placeholder="22" autocomplete="off">
+        <div class="char-count" id="charCount">0</div>
+      </div>
+      <button class="continue-button" id="continueBtn">Continue</button>
+      <button class="submit-button" id="submitBtn" style="display: none; background: #7c6aff; color: #ffffff; padding: 14px 36px; border-radius: 100px; font-size: 1rem; border: none; cursor: pointer; letter-spacing: 0.05em; font-family: 'Inter', sans-serif; margin: 40px auto 0; opacity: 0; pointer-events: none; transition: opacity 400ms ease;">Generate Alternate Futures</button>
+    </div>
+  </main>
+
+  <script src="scripts/intake.js"></script>
+</body>
+</html>

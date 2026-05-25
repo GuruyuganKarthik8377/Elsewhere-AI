@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Alternate Futures - Elsewhere</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    nav { position: relative !important; top: auto !important; }
+  </style>
+</head>
+<body>
+  <div class="selves-orb"></div>
+  <nav class="top-nav">
+    <div class="logo-container">
+      <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px; cursor: pointer;">
+      <svg class="logo-icon" viewBox="0 0 24 24" width="24" height="24">
+        <defs>
+          <radialGradient id="moonGrad" cx="0.78" cy="0.45" r="0.7">
+            <stop offset="0%" stop-color="#c4b8ff"/>
+            <stop offset="45%" stop-color="#8a78ff"/>
+            <stop offset="100%" stop-color="#4a3a9c"/>
+          </radialGradient>
+          <filter id="moonGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.35" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <mask id="crescentMask">
+            <rect width="24" height="24" fill="white"/>
+            <circle cx="9.4" cy="10.8" r="8.5" fill="black"/>
+          </mask>
+        </defs>
+        <circle cx="12.5" cy="12" r="8.5" fill="url(#moonGrad)" mask="url(#crescentMask)" filter="url(#moonGlow)"/>
+      </svg>
+      <span class="wordmark">ELSEWHERE</span>
+      </a>
+    </div>
+    <div class="ambient-label" style="color: rgba(136,136,170,0.5);">Your Alternate Futures</div>
+  </nav>
+  <div class="selves-container" style="padding-top: 80px;">
+    <header class="selves-header">
+      <div class="label">YOUR ALTERNATE FUTURES</div>
+      <h2>Three versions of you. Three paths you could take.</h2>
+    </header>
+
+    <main class="selves-grid">
+      <!-- Card 1 -->
+      <article class="self-card" data-self="0">
+        <div class="card-inner">
+        <div class="path-label self-path">THE SAFE PATH</div>
+        <button class="expand-btn" data-self="0">⤢ Read fully</button>
+        <h3 class="identity-title self-title">The Version of You Who Stayed</h3>
+        <div class="identity-year self-year">2037</div>
+        <p class="self-summary" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 8px; line-height: 1.5;"></p>
+        
+        <hr class="card-divider">
+        
+        <div class="section-label">EMOTIONAL LANDSCAPE</div>
+        
+        <div class="meter-group">
+          <div class="meter-header">
+            <span>Fulfillment</span>
+            <span class="meter-fulfillment-val">0%</span>
+          </div>
+          <div class="meter-track">
+            <div class="meter-fill meter-fulfillment" style="width: 0%;"></div>
+          </div>
+        </div>
+        
+        <div class="meter-group">
+          <div class="meter-header">
+            <span>Regret</span>
+            <span class="meter-regret-val">0%</span>
+          </div>
+          <div class="meter-track">
+            <div class="meter-fill meter-regret" style="width: 0%;"></div>
+          </div>
+        </div>
+        
+        <div class="meter-group">
+          <div class="meter-header">
+            <span>Freedom</span>
+            <span class="meter-freedom-val">0%</span>
+          </div>
+          <div class="meter-track">
+            <div class="meter-fill meter-freedom" style="width: 0%;"></div>
+          </div>
+        </div>
+        
+        <div class="meter-group">
+          <div class="meter-header">
+            <span>Connection</span>
+            <span class="meter-connection-val">0%</span>
+          </div>
+          <div class="meter-track">
+            <div class="meter-fill meter-connection" style="width: 0%;"></div>
+          </div>
+        </div>
+        
+        <hr class="card-divider">
+        
+        <div class="section-label">TIMELINE</div>
+        <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.8rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 8px;">
+          <li><strong style="color: var(--text-primary);">Year 1:</strong> <span class="timeline-1">...</span></li>
+          <li><strong style="color: var(--text-primary);">Year 5:</strong> <span class="timeline-5">...</span></li>
+          <li><strong style="color: var(--text-primary);">Year 10:</strong> <span class="timeline-10">...</span></li>
+          <li><strong style="color: var(--text-primary);">Year 20:</strong> <span class="timeline-20">...</span></li>
+        </ul>
+        
+        <hr class="card-divider">
+        
+        <div class="section-label">FUTURE DIARY</div>
+        <p class="diary-text self-diary">...</p>
+
+        <hr class="card-divider">
+
+        <div class="trajectory-label">LIFE TRAJECTORY</div>
+        <div class="timeline-strip">
+          <div class="timeline-track"></div>
+          <div class="timeline-points">
+            <div class="t-point">
+              <div class="t-dot"></div>
+              <div class="t-year">Year 1</div>
+              <div class="t-text"></div>
+            </div>
+            <div class="t-point">
+              <div class="t-dot"></div>
+              <div class="t-year">Year 5</div>
+              <div class="t-text"></div>
+            </div>
+            <div class="t-point">
+              <div class="t-dot"></div>
+              <div class="t-year">Year 10</div>
+              <div class="t-text"></div>
+            </div>
+            <div class="t-point">
+              <div class="t-dot"></div>
+              <div class="t-year">Year 20</div>
+              <div class="t-text"></div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="card-divider">
+
+        <div class="closing-quote self-quote">...</div>
+        <button class="share-future-btn" data-self="0">Share this future</button>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="self-card" data-self="1">
+        <div class="card-inner">
+        <div class="path-label self-path">THE BOLD PATH</div>
+        <button class="expand-btn" data-self="1">⤢ Read fully</button>
+        <h3 class="identity-title self-title">The Version of You Who Jumped</h3>
+        <div class="identity-year self-year">2037</div>
+        <p class="self-summary" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 8px; line-height: 1.5;"></p>
+        
+        <hr class="card-divider">
+        
+        <div class="section-label">EMOTIONAL LANDSCAPE</div>
+        
+        <div class="meter-group">
+          <div class="meter-header">
+            <span>Fulfillment</span>
+            <span class="meter-fulfillment-val">0%</span>
+          </div>
+          <div class="meter-track">
+            <div class="meter-fill meter-fulfillment" style="width: 0%;"></div>
+          </div>
+        </div>
+        
+        <div class="meter-group">
+          <div class="meter-header">
+            <span>Regret</span>
+            <span class="meter-regret-val">0%</span>
+          </div>
+          <div class="meter-track">
+            <div class="meter-fill meter-regret" style="width: 0%;"></div>
+          </div>
+        </div>
+        
+        <div class="meter-group">
+          <div class="meter-header">
+            <span>Freedom</span>
+            <span class="meter-freedom-val">0%</span>
+          </div>
+          <div class="meter-track">
+            <div class="meter-fill meter-freedom" style="width: 0%;"></div>
+          </div>
+        </div>
+        
+        <div class="meter-group">
+          <div class="meter-header">
+            <span>Connection</span>
+            <span class="meter-connection-val">0%</span>
+          </div>
+          <div class="meter-track">
+            <div class="meter-fill meter-connection" style="width: 0%;"></div>
+          </div>
+        </div>
+        
+        <hr class="card-divider">
+        
+        <div class="section-label">TIMELINE</div>
+        <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.8rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 8px;">
+          <li><strong style="color: var(--text-primary);">Year 1:</strong> <span class="timeline-1">...</span></li>
+          <li><strong style="color: var(--text-primary);">Year 5:</strong> <span class="timeline-5">...</span></li>
+          <li><strong style="color: var(--text-primary);">Year 10:</strong> <span class="timeline-10">...</span></li>
+          <li><strong style="color: var(--text-primary);">Year 20:</strong> <span class="timeline-20">...</span></li>
+        </ul>
+        
+        <hr class="card-divider">
+        
+        <div class="section-label">FUTURE DIARY</div>
+        <p class="diary-text self-diary">...</p>
+
+        <hr class="card-divider">
+
+        <div class="trajectory-label">LIFE TRAJECTORY</div>
+        <div class="timeline-strip">
+          <div class="timeline-track"></div>
+          <div class="timeline-points">
+            <div class="t-point">
+              <div class="t-dot"></div>
+              <div class="t-year">Year 1</div>
+              <div class="t-text"></div>
+            </div>
+            <div class="t-point">
+              <div class="t-dot"></div>
+              <div class="t-year">Year 5</div>
+              <div class="t-text"></div>
+            </div>
+            <div class="t-point">
+              <div class="t-dot"></div>
+              <div class="t-year">Year 10</div>
+              <div class="t-text"></div>
+            </div>
+            <div class="t-point">
+              <div class="t-dot"></div>
+              <div class="t-year">Year 20</div>
+              <div class="t-text"></div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="card-divider">
+
+        <div class="closing-quote self-quote">...</div>
+        <button class="share-future-btn" data-self="1">Share this future</button>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="self-card" data-self="2">
+        <div class="card-inner">
+        <div class="path-label self-path">THE UNEXPECTED PATH</div>
+        <button class="expand-btn" data-self="2">⤢ Read fully</button>
+        <h3 class="identity-title self-title">The Version of You Who Pivoted</h3>
+        <div class="identity-year self-year">2037</div>
+        <p class="self-summary" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 8px; line-height: 1.5;"></p>
+        
+        <hr class="card-divider">
+        
+        <div class="section-label">EMOTIONAL LANDSCAPE</div>
+        
+        <div class="meter-group">
+          <div class="meter-header">
+            <span>Fulfillment</span>
+            <span class="meter-fulfillment-val">0%</span>
+          </div>
+          <div class="meter-track">
+            <div class="meter-fill meter-fulfillment" style="width: 0%;"></div>
+          </div>
+        </div>
+        
+        <div class="meter-group">
+          <div class="meter-header">
+            <span>Regret</span>
+            <span class="meter-regret-val">0%</span>
+          </div>
+          <div class="meter-track">
+            <div class="meter-fill meter-regret" style="width: 0%;"></div>
+          </div>
+        </div>
+        
+        <div class="meter-group">
+          <div class="meter-header">
+            <span>Freedom</span>
+            <span class="meter-freedom-val">0%</span>
+          </div>
+          <div class="meter-track">
+            <div class="meter-fill meter-freedom" style="width: 0%;"></div>
+          </div>
+        </div>
+        
+        <div class="meter-group">
+          <div class="meter-header">
+            <span>Connection</span>
+            <span class="meter-connection-val">0%</span>
+          </div>
+          <div class="meter-track">
+            <div class="meter-fill meter-connection" style="width: 0%;"></div>
+          </div>
+        </div>
+        
+        <hr class="card-divider">
+        
+        <div class="section-label">TIMELINE</div>
+        <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.8rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 8px;">
+          <li><strong style="color: var(--text-primary);">Year 1:</strong> <span class="timeline-1">...</span></li>
+          <li><strong style="color: var(--text-primary);">Year 5:</strong> <span class="timeline-5">...</span></li>
+          <li><strong style="color: var(--text-primary);">Year 10:</strong> <span class="timeline-10">...</span></li>
+          <li><strong style="color: var(--text-primary);">Year 20:</strong> <span class="timeline-20">...</span></li>
+        </ul>
+        
+        <hr class="card-divider">
+        
+        <div class="section-label">FUTURE DIARY</div>
+        <p class="diary-text self-diary">...</p>
+
+        <hr class="card-divider">
+
+        <div class="trajectory-label">LIFE TRAJECTORY</div>
+        <div class="timeline-strip">
+          <div class="timeline-track"></div>
+          <div class="timeline-points">
+            <div class="t-point">
+              <div class="t-dot"></div>
+              <div class="t-year">Year 1</div>
+              <div class="t-text"></div>
+            </div>
+            <div class="t-point">
+              <div class="t-dot"></div>
+              <div class="t-year">Year 5</div>
+              <div class="t-text"></div>
+            </div>
+            <div class="t-point">
+              <div class="t-dot"></div>
+              <div class="t-year">Year 10</div>
+              <div class="t-text"></div>
+            </div>
+            <div class="t-point">
+              <div class="t-dot"></div>
+              <div class="t-year">Year 20</div>
+              <div class="t-text"></div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="card-divider">
+
+        <div class="closing-quote self-quote">...</div>
+        <button class="share-future-btn" data-self="2">Share this future</button>
+        </div>
+      </article>
+
+    </main>
+
+    <div class="card-indicators">
+      <div class="dot active" data-index="0"></div>
+      <div class="dot" data-index="1"></div>
+      <div class="dot" data-index="2"></div>
+    </div>
+    
+    <div class="action-buttons">
+      <button class="ghost-btn" id="btnExplore">Explore a different decision</button>
+      <button class="text-btn" id="btnRestart">Start over</button>
+    </div>
+  </div>
+
+  <!-- Expand Modal Overlay -->
+  <div id="expand-modal" class="expand-modal" aria-hidden="true">
+    <button class="expand-nav-arrow expand-prev" aria-label="Previous future">←</button>
+    <button class="expand-nav-arrow expand-next" aria-label="Next future">→</button>
+    <button class="expand-close" aria-label="Close">✕</button>
+
+    <div class="expand-content" id="expand-content">
+      <div class="expand-path" id="ex-path"></div>
+      <h2 class="expand-title" id="ex-title"></h2>
+      <div class="expand-year" id="ex-year"></div>
+
+      <hr class="expand-divider">
+
+      <div class="expand-meters" id="ex-meters">
+        <div class="ex-meter">
+          <div class="ex-meter-header"><span>Fulfillment</span><span id="ex-fulfill-val">0%</span></div>
+          <div class="ex-meter-track"><div class="ex-meter-fill" id="ex-fulfill-bar"></div></div>
+        </div>
+        <div class="ex-meter">
+          <div class="ex-meter-header"><span>Regret</span><span id="ex-regret-val">0%</span></div>
+          <div class="ex-meter-track"><div class="ex-meter-fill" id="ex-regret-bar"></div></div>
+        </div>
+        <div class="ex-meter">
+          <div class="ex-meter-header"><span>Freedom</span><span id="ex-freedom-val">0%</span></div>
+          <div class="ex-meter-track"><div class="ex-meter-fill" id="ex-freedom-bar"></div></div>
+        </div>
+        <div class="ex-meter">
+          <div class="ex-meter-header"><span>Connection</span><span id="ex-connection-val">0%</span></div>
+          <div class="ex-meter-track"><div class="ex-meter-fill" id="ex-connection-bar"></div></div>
+        </div>
+      </div>
+
+      <hr class="expand-divider">
+
+      <div class="expand-section-label">FUTURE DIARY</div>
+      <p class="expand-diary" id="ex-diary"></p>
+
+      <hr class="expand-divider">
+
+      <div class="expand-section-label">LIFE TRAJECTORY</div>
+      <ul class="expand-timeline" id="ex-timeline">
+        <li><span class="ex-tl-year">Year 1</span><span class="ex-tl-text" data-tl="1"></span></li>
+        <li><span class="ex-tl-year">Year 5</span><span class="ex-tl-text" data-tl="5"></span></li>
+        <li><span class="ex-tl-year">Year 10</span><span class="ex-tl-text" data-tl="10"></span></li>
+        <li><span class="ex-tl-year">Year 20</span><span class="ex-tl-text" data-tl="20"></span></li>
+      </ul>
+
+      <hr class="expand-divider">
+
+      <div class="expand-quote" id="ex-quote"></div>
+
+      <button class="expand-share-btn" id="ex-share-btn">Share this future</button>
+    </div>
+  </div>
+
+  <!-- Share Modal Overlay -->
+  <div id="share-modal" style="display:none; position:fixed; inset:0; z-index:200; background:rgba(0,0,0,0.85); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); align-items:center; justify-content:center; flex-direction:column; gap:24px;">
+
+    <!-- Share Card -->
+    <div id="share-card" style="width:480px; background:linear-gradient(135deg,#0a0a18 0%,#0f0a22 50%,#080818 100%); border:1px solid rgba(124,106,255,0.3); border-radius:24px; padding:40px 36px; position:relative; overflow:hidden; font-family:'Inter',sans-serif;">
+
+      <!-- Atmospheric orb -->
+      <div style="position:absolute; width:300px; height:300px; border-radius:50%; background:radial-gradient(circle, rgba(124,106,255,0.08), transparent 70%); top:-80px; right:-80px; pointer-events:none;"></div>
+
+      <!-- Top decoration: logo + wordmark -->
+      <div style="display:flex; align-items:center; gap:8px;">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <defs>
+            <radialGradient id="moonGradB" cx="0.78" cy="0.45" r="0.7">
+              <stop offset="0%" stop-color="#c4b8ff"/>
+              <stop offset="45%" stop-color="#8a78ff"/>
+              <stop offset="100%" stop-color="#4a3a9c"/>
+            </radialGradient>
+            <mask id="crescentMaskB">
+              <rect width="24" height="24" fill="white"/>
+              <circle cx="9.4" cy="10.8" r="8.5" fill="black"/>
+            </mask>
+          </defs>
+          <circle cx="12.5" cy="12" r="8.5" fill="url(#moonGradB)" mask="url(#crescentMaskB)"/>
+        </svg>
+        <span style="font-size:0.7rem; letter-spacing:0.2em; color:rgba(124,106,255,0.8); font-weight:500;">ELSEWHERE</span>
+      </div>
+
+      <!-- Divider -->
+      <div style="height:1px; background:rgba(124,106,255,0.15); margin:20px 0;"></div>
+
+      <!-- Path label -->
+      <div id="sc-path" style="font-size:0.65rem; letter-spacing:0.2em; color:rgba(124,106,255,0.7); text-transform:uppercase;"></div>
+
+      <!-- Identity title -->
+      <div id="sc-title" style="font-size:1.3rem; font-weight:400; color:#ffffff; margin-top:8px; line-height:1.3;"></div>
+
+      <!-- Year -->
+      <div id="sc-year" style="font-size:0.85rem; color:rgba(180,170,220,0.6); margin-top:6px;"></div>
+
+      <!-- Divider -->
+      <div style="height:1px; background:rgba(124,106,255,0.15); margin:20px 0;"></div>
+
+      <!-- Closing quote (hero element) -->
+      <div id="sc-quote" style="font-size:1.05rem; font-style:italic; font-weight:300; color:rgba(220,210,255,0.9); line-height:1.6; text-align:center; margin:4px 0;"></div>
+
+      <!-- Divider -->
+      <div style="height:1px; background:rgba(124,106,255,0.15); margin:20px 0;"></div>
+
+      <!-- Emotional meters 2x2 grid -->
+      <div id="sc-meters" style="display:grid; grid-template-columns:1fr 1fr; gap:16px 24px;">
+        <!-- Fulfillment -->
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+            <span style="font-size:0.65rem; letter-spacing:0.1em; color:rgba(136,136,170,0.7); text-transform:uppercase;">Fulfillment</span>
+            <span id="sc-fulfill-val" style="font-size:0.7rem; color:rgba(180,170,220,0.6);">0%</span>
+          </div>
+          <div style="height:2px; background:rgba(255,255,255,0.08); border-radius:1px; overflow:hidden;">
+            <div id="sc-fulfill-bar" style="height:100%; background:rgba(124,106,255,0.8); border-radius:1px; width:0%; transition:width 1s ease-out;"></div>
+          </div>
+        </div>
+        <!-- Regret -->
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+            <span style="font-size:0.65rem; letter-spacing:0.1em; color:rgba(136,136,170,0.7); text-transform:uppercase;">Regret</span>
+            <span id="sc-regret-val" style="font-size:0.7rem; color:rgba(180,170,220,0.6);">0%</span>
+          </div>
+          <div style="height:2px; background:rgba(255,255,255,0.08); border-radius:1px; overflow:hidden;">
+            <div id="sc-regret-bar" style="height:100%; background:rgba(124,106,255,0.8); border-radius:1px; width:0%; transition:width 1s ease-out;"></div>
+          </div>
+        </div>
+        <!-- Freedom -->
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+            <span style="font-size:0.65rem; letter-spacing:0.1em; color:rgba(136,136,170,0.7); text-transform:uppercase;">Freedom</span>
+            <span id="sc-freedom-val" style="font-size:0.7rem; color:rgba(180,170,220,0.6);">0%</span>
+          </div>
+          <div style="height:2px; background:rgba(255,255,255,0.08); border-radius:1px; overflow:hidden;">
+            <div id="sc-freedom-bar" style="height:100%; background:rgba(124,106,255,0.8); border-radius:1px; width:0%; transition:width 1s ease-out;"></div>
+          </div>
+        </div>
+        <!-- Connection -->
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+            <span style="font-size:0.65rem; letter-spacing:0.1em; color:rgba(136,136,170,0.7); text-transform:uppercase;">Connection</span>
+            <span id="sc-connection-val" style="font-size:0.7rem; color:rgba(180,170,220,0.6);">0%</span>
+          </div>
+          <div style="height:2px; background:rgba(255,255,255,0.08); border-radius:1px; overflow:hidden;">
+            <div id="sc-connection-bar" style="height:100%; background:rgba(124,106,255,0.8); border-radius:1px; width:0%; transition:width 1s ease-out;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal action buttons -->
+    <div style="display:flex; gap:16px; align-items:center;">
+      <button id="btn-copy-image" style="background:rgba(124,106,255,0.9); color:#fff; border:none; padding:12px 28px; border-radius:100px; font-size:0.95rem; font-family:'Inter',sans-serif; font-weight:500; cursor:pointer; transition:background 0.3s, transform 0.2s; letter-spacing:0.02em;">Copy as Image</button>
+      <button id="btn-close-modal" style="background:transparent; border:1px solid rgba(255,255,255,0.15); color:rgba(200,190,240,0.7); padding:12px 28px; border-radius:100px; font-size:0.95rem; font-family:'Inter',sans-serif; cursor:pointer; transition:border-color 0.3s, color 0.3s;">Close</button>
+    </div>
+  </div>
+
+  <script src="scripts/selves.js"></script>
+</body>
+</html>

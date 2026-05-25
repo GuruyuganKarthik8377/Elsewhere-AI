@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generating - Elsewhere</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body style="margin: 0; padding: 0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--bg); overflow: hidden;">
+  <nav class="top-nav">
+    <div class="logo-container">
+      <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px; cursor: pointer; pointer-events: none; opacity: 0.5;">
+      <svg class="logo-icon" viewBox="0 0 24 24" width="24" height="24">
+        <defs>
+          <radialGradient id="moonGrad" cx="0.78" cy="0.45" r="0.7">
+            <stop offset="0%" stop-color="#c4b8ff"/>
+            <stop offset="45%" stop-color="#8a78ff"/>
+            <stop offset="100%" stop-color="#4a3a9c"/>
+          </radialGradient>
+          <filter id="moonGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.35" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <mask id="crescentMask">
+            <rect width="24" height="24" fill="white"/>
+            <circle cx="9.4" cy="10.8" r="8.5" fill="black"/>
+          </mask>
+        </defs>
+        <circle cx="12.5" cy="12" r="8.5" fill="url(#moonGrad)" mask="url(#crescentMask)" filter="url(#moonGlow)"/>
+      </svg>
+      <span class="wordmark">ELSEWHERE</span>
+      </a>
+    </div>
+  </nav>
+  <div id="gen-container" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 40px; width: 100%; max-width: 500px; padding: 0 24px;">
+    <div class="orb-wrapper">
+      <div class="pulsing-orb-large"></div>
+      <div class="pulsing-orb-ring"></div>
+      <div class="pulsing-orb"></div>
+    </div>
+    <div class="generating-text" id="loadingText" style="text-align: center; margin: 0;">Simulating parallel identities…</div>
+  </div>
+
+  <script src="scripts/generate.js"></script>
+</body>
+</html>
