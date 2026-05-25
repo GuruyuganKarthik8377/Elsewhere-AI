@@ -28,10 +28,6 @@ Answer 5 questions about your life and the decision you're facing. Elsewhere gen
 3. Replace `YOUR_CLAUDE_API_KEY_HERE` with your actual Claude API key from console.anthropic.com
 4. Open `index.html` in your browser or deploy to Netlify
 
-## Live Demo
-
-[elsewhere-ai.netlify.app](https://elsewhere-ai.netlify.app)
-
 ## Built by
 
 Built in 4 days for the MeDo Hackathon 2026.
